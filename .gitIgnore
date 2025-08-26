@@ -1,0 +1,20 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+.env
+.DS_Store
+*.tgz
+coverage/
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+*.log
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+*.tsbuildinfo
