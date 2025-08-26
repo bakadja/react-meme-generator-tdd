@@ -24,6 +24,4 @@ describe("Main", () => {
         expect(screen.getByRole("button").textContent).toBe("Get a new meme image 🖼")
 
     })
-
-
 })
