@@ -18,6 +18,7 @@ describe("Main", () => {
         render(<Main />)
 
         expect(screen.getByText("Top Text")).toBeInTheDocument()
+        expect(screen.getByText("Bottom Text")).toBeInTheDocument()
         expect(screen.getByPlaceholderText("One does not simply")).toBeInTheDocument()
         expect(screen.getByPlaceholderText("Walk into Mordor")).toBeInTheDocument()
         expect(screen.getByRole("button").textContent).toBe("Get a new meme image 🖼")
