@@ -5,21 +5,24 @@ import Main from "./Main"
 
 describe("Main", () => {
 
-    test(`shows the actual text lines "One does not simply"`, () => {
+    test("renders the expected texts and image in the Main component", () => {
         render(<Main />)
+
         expect(screen.getByText("One does not simply")).toBeInTheDocument()
-    })
-
-    test(`shows the actual text lines "Walk into Mordor"`, () => {
-        render(<Main />)
         expect(screen.getByText("Walk into Mordor")).toBeInTheDocument()
-    })
+        expect(screen.getByRole("img").src).toBe("https://i.imgflip.com/1bij.jpg")
+        
+    } )
 
-    test(`check that the img with the src`, () => {
+    test("renders the labels, input fields and button in the Main component", () => {
         render(<Main />)
-        expect(screen.getByRole("img").src).contain("https://i.imgflip.com/1bij.jpg")
-    })
 
+        expect(screen.getByText("Top Text")).toBeInTheDocument()
+        expect(screen.getByPlaceholderText("One does not simply")).toBeInTheDocument()
+        expect(screen.getByPlaceholderText("Walk into Mordor")).toBeInTheDocument()
+        expect(screen.getByRole("button").textContent).toBe("Get a new meme image 🖼")
+
+    })
 
 
 })
