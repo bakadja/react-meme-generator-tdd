@@ -3,7 +3,7 @@ import { beforeAll, afterEach, afterAll } from 'vitest';
 import { cleanup } from '@testing-library/react';
 
 import { setupServer } from 'msw/node';
-import { rest } from 'msw';
+import { http, HttpResponse} from 'msw';
 
 
 // Prepare data
@@ -18,14 +18,21 @@ const memes = {
 }
 
 // Define handlers using MSW 1.x
-export const restHandlers = [
-  rest?.get('https://api.imgflip.com/get_memes', (req, res, ctx) => {
-    return res(ctx.json(memes));
+//export const restHandlers = [
+//  rest?.get('https://api.imgflip.com/get_memes', (req, res, ctx) => {
+//    return res(ctx.json(memes));
+//  }),
+//];
+
+export const handlers = [
+  http.get('https://api.imgflip.com/get_memes', () => {
+    return HttpResponse.json(memes)
   }),
-];
+]
 
 // Set up server
-const server = setupServer(...restHandlers);
+//const server = setupServer(...restHandlers);
+export const server = setupServer(...handlers)
 
 // Establish requests interception layer before all tests.
 beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
