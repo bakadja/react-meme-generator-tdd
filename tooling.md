@@ -43,3 +43,15 @@ test: {
 ```
 npm run test
 ```
+
+
+### Install MSW for mock external services. 
+```
+npm install -D msw
+```
+
+### Install Istanbul for test coverage.
+
+```
+npm install -D @vitest/coverage-istanbul
+```
