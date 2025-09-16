@@ -55,3 +55,20 @@ npm install -D msw
 ```
 npm install -D @vitest/coverage-istanbul
 ```
+### septup vite.config.ts (for typescript)
+```
+import { defineConfig } from 'vitest/config'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    setupFiles: ["./test-setup.js"],
+    environment: 'jsdom',
+    coverage: {
+      provider: 'istanbul'
+    }
+  }
+})
+
+```
