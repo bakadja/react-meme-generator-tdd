@@ -7,7 +7,7 @@ npm install -D vitest
 
 2. Install the React Testing Library and its companions to render React components, add DOM matchers, and initiate user events.
 ```
-npm install -D @testing-library/react @testing-library/jest-dom @testing-library/user-event
+npm install -D @testing-library/react @testing-library/jest-dom @testing-library/user-event @vitejs/plugin-react
 ```
 
 3. Install a DOM environment to run the tests: `jsdom`.
